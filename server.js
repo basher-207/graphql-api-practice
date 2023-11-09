@@ -3,8 +3,8 @@ import dotenv from 'dotenv';
 import app from './app.js';
 
 dotenv.config({ path: './config.env' });
-const dbPassword = '';
-const db = process.env.DATABASE.replace('<PASSWORD>', dbPassword);
+const dbPassword = process.env.PASSWORD;
+const db = process.env.DATABASE.replace('<password>', dbPassword);
 mongoose.connect(db).then(() => {
   console.log('Db connection successful');
 });
